@@ -117,7 +117,7 @@ public class HomeFragment extends Fragment
                 for (String s : sentence){
                     sb.append(s);
                 }
-                //binding.sentence.setText(sb.toString());
+                binding.sentence.setText(getDate);
             }
         });
 
@@ -136,7 +136,7 @@ public class HomeFragment extends Fragment
 
     public static String getCurrentDateAndTime(){
         Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy");
         String formattedDate = simpleDateFormat.format(c);
         return formattedDate;
    }
