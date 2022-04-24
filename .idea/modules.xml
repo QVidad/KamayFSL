@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Kamay.iml" filepath="$PROJECT_DIR$/.idea/modules/Kamay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Kamay.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Kamay.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdk/Kamay.sdk.iml" filepath="$PROJECT_DIR$/.idea/modules/sdk/Kamay.sdk.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kamay</string>
+    <string name="title_home">Translate</string>
+    <string name="title_dashboard">Type</string>
+    <string name="title_notifications">About</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
