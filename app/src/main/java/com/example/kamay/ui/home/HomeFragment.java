@@ -103,35 +103,39 @@ public class HomeFragment extends Fragment
         View root = binding.getRoot();
         checkPermission();
         getFlipValue();
+        addValueSentence();
+        saving();
 
-        binding.add.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                addValueSentence();
-                }
-        });
+        return root;
+    }
+    public void saving() {
         binding.save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 getDate = getCurrentDateAndTime();
 
+                //forming the sentence
                 StringBuilder sb = new StringBuilder();
                 for (String s : sentence){
                     sb.append(s);
                 }
+                //getting the date
                 binding.sentence.setText(getDate);
             }
         });
-
-        return root;
     }
     public void addValueSentence(){
+        binding.add.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 binding.sentence.setText("");
                 sentence.add(binding.translatedText.getText().toString());
                 sentence.add(" ");
-                // Access and print out the Objects
+                // Inserting the translation to a list
                 for ( int j=0; j<sentence.size(); j++ ) {
                     binding.sentence.setText((binding.sentence.getText() != null ? binding.sentence.getText() : "") + sentence.get(j));
                     System.out.println("element " + j + ": " + sentence.get(j));
                 }
+            }
+        });
     }
 
     public static String getCurrentDateAndTime(){
