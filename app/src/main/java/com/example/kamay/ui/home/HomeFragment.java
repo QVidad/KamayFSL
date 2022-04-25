@@ -60,9 +60,9 @@ public class HomeFragment extends Fragment
     private FragmentHomeBinding binding;
     private int CAMERA_CODE = 100;
 
-    private ArrayList<String> labels = new ArrayList<>(Arrays.asList("L", "Mahal Kita", "A", "B", "C", "D", "E", "F o 6", "G", "H", "I", "J",
-                                                                    "K", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V o 2", "W o 6", "X",
-                                                                    "Y", "Z", "Salamat", "Hello", "1", "3", "4", "5", "7", "8", "10", "Oo", "Hindi"));
+    private ArrayList<String> labels = new ArrayList<>(Arrays.asList("L", "Mahal Kita", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
+                                                                    "K", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
+                                                                    "Y", "Z", "Salamat"));
     private ArrayList<String> sentence = new ArrayList<>();
     private String addSentence = "";
     private Hands hands;
@@ -88,7 +88,6 @@ public class HomeFragment extends Fragment
     public Boolean isFLip = false;
     private String getDate = "";
     private String intoList = "";
-    DBHelper DB;
     
     StringBuilder sb = new StringBuilder();
 
@@ -107,38 +106,11 @@ public class HomeFragment extends Fragment
         checkPermission();
         getFlipValue();
         addValueSentence();
-        saving();
 
 
         return root;
     }
-    public void saving() {
-        binding.save.setOnClickListener(new View.OnClickListener() {
 
-            public void onClick(View v) {
-                getDate = getCurrentDateAndTime();
-
-                //forming the sentence
-                for (String s : sentence){
-                    sb.append(s);
-                }
-                //getting the date
-                //binding.sentence.setText(sb);
-                DB = new DBHelper(getContext());
-                String idTXT = "1";
-                String dateTXT = getDate;
-                String sbTXT = sb.toString();
-
-                Boolean checkinsertdata = DB.insertHistory(idTXT,dateTXT,sbTXT);
-                if(checkinsertdata==true){
-                    Toast.makeText(getActivity(), "Saved Successfully",Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getActivity(), "Failed to Save",Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-    }
     public void addValueSentence(){
         binding.add.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

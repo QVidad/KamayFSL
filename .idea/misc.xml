@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.14130434782608695" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2942708333333333" />
+        <entry key="app/src/main/res/layout/fragment_view_history.xml" value="0.2578125" />
+        <entry key="app/src/main/res/layout/history_element.xml" value="0.2578125" />
+        <entry key="app/src/main/res/layout/view_convo.xml" value="0.2578125" />
       </map>
     </option>
   </component>
