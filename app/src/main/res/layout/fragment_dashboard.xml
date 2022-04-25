@@ -31,13 +31,6 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="-1dp">
-                        <ImageButton
-                            android:id="@+id/save"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginRight="30dp"
-                            android:layout_marginBottom="70dp"
-                            android:background="@drawable/ic_save"></ImageButton>
                 </LinearLayout>
         </RelativeLayout>
 

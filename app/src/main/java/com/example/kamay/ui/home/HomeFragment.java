@@ -88,6 +88,9 @@ public class HomeFragment extends Fragment
     public Boolean isFLip = false;
     private String getDate = "";
     private String intoList = "";
+    DBHelper DB;
+    
+    StringBuilder sb = new StringBuilder();
 
     public HomeFragment()
     {
@@ -106,20 +109,33 @@ public class HomeFragment extends Fragment
         addValueSentence();
         saving();
 
+
         return root;
     }
     public void saving() {
         binding.save.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
                 getDate = getCurrentDateAndTime();
 
                 //forming the sentence
-                StringBuilder sb = new StringBuilder();
                 for (String s : sentence){
                     sb.append(s);
                 }
                 //getting the date
-                binding.sentence.setText(getDate);
+                //binding.sentence.setText(sb);
+                DB = new DBHelper(getContext());
+                String idTXT = "1";
+                String dateTXT = getDate;
+                String sbTXT = sb.toString();
+
+                Boolean checkinsertdata = DB.insertHistory(idTXT,dateTXT,sbTXT);
+                if(checkinsertdata==true){
+                    Toast.makeText(getActivity(), "Saved Successfully",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "Failed to Save",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

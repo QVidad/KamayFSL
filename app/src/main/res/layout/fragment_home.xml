@@ -61,20 +61,20 @@
             android:id="@+id/flip"
             ></ImageButton>
         <ImageButton
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="bottom|right"
-            android:layout_marginBottom="70dp"
-            android:layout_marginRight="90dp"
+            android:layout_marginBottom="130dp"
+            android:layout_marginRight="34dp"
             android:background="@drawable/ic_save"
             android:id="@+id/save"
             ></ImageButton>
         <ImageButton
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="bottom|right"
-            android:layout_marginBottom="70dp"
-            android:layout_marginRight="145dp"
+            android:layout_marginBottom="185dp"
+            android:layout_marginRight="34dp"
             android:background="@drawable/ic_add"
             android:id="@+id/add"
             ></ImageButton>

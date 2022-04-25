@@ -15,7 +15,6 @@ import com.example.kamay.databinding.FragmentDashboardBinding;
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
-    public Boolean isSave = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -24,13 +23,6 @@ public class DashboardFragment extends Fragment {
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        binding.save.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                isSave = !isSave;
-                binding.type.setText("Success");
-            }
-        });
-        isSave = !isSave;
 
         return root;
     }
