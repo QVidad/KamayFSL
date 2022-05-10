@@ -37,22 +37,15 @@ import com.google.mediapipe.solutions.hands.Hands;
 import com.google.mediapipe.solutions.hands.HandsOptions;
 import com.google.mediapipe.solutions.hands.HandsResult;
 
-import org.checkerframework.checker.units.qual.A;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 
 public class HomeFragment extends Fragment
 {
@@ -62,7 +55,8 @@ public class HomeFragment extends Fragment
 
     private ArrayList<String> labels = new ArrayList<>(Arrays.asList("L", "Mahal Kita", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
                                                                     "K", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
-                                                                    "Y", "Z", "Salamat"));
+                                                                    "Y", "Z", "Salamat", "Hello", "Oo", "Hindi", "Ikaw", "Ako","Saan",
+                                                                    "Sign Language","Maganda","Magandang","Umaga","Tanghali","Gabi","Hapon"));
     private ArrayList<String> sentence = new ArrayList<>();
     private String addSentence = "";
     private Hands hands;
@@ -88,8 +82,6 @@ public class HomeFragment extends Fragment
     public Boolean isFLip = false;
     private String getDate = "";
     private String intoList = "";
-    
-    StringBuilder sb = new StringBuilder();
 
     public HomeFragment()
     {
@@ -106,7 +98,6 @@ public class HomeFragment extends Fragment
         checkPermission();
         getFlipValue();
         addValueSentence();
-
 
         return root;
     }
@@ -126,20 +117,11 @@ public class HomeFragment extends Fragment
         });
     }
 
-    public static String getCurrentDateAndTime(){
-        Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM dd, yyyy");
-        String formattedDate = simpleDateFormat.format(c);
-        return formattedDate;
-   }
-public void checkPermission()
-    {
-        if (ContextCompat.checkSelfPermission(HomeFragment.this.getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED)
-        {
+    public void checkPermission(){
+        if (ContextCompat.checkSelfPermission(HomeFragment.this.getContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
             binding.camera.setText("This feature needs to use the camera. Please give permission to the application to access your phone camera.");
             requestPermissions(new String[]{Manifest.permission.CAMERA}, CAMERA_CODE);
-            button.setOnClickListener(new OnClickListener()
-            {
+            button.setOnClickListener(new OnClickListener(){
                 public void onClick(View v) {
                     requestPermissions(new String[] { Manifest.permission.CAMERA }, CAMERA_CODE);
                 }
@@ -150,8 +132,7 @@ public void checkPermission()
         }
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
-    {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == CAMERA_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
@@ -165,22 +146,19 @@ public void checkPermission()
         }
     }
     @Override
-    public void onDestroyView()
-    {
+    public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
     @Override
-    public void onPause()
-    {
+    public void onPause() {
         super.onPause();
         glSurfaceView.setVisibility(View.GONE);
         cameraInput.close();
     }
 
     @Override
-    public void onResume()
-    {
+    public void onResume() {
         super.onResume();
         // Restarts the camera and the opengl surface rendering.
         cameraInput = new CameraInput(this.getActivity());
@@ -191,15 +169,13 @@ public void checkPermission()
 
 
     /** Sets up the UI components for the live demo with camera input. */
-    private void setupLiveDemoUiComponents()
-    {
+    private void setupLiveDemoUiComponents() {
         stopCurrentPipeline();
         setupStreamingModePipeline(InputSource.CAMERA);
     }
 
     /** Sets up core workflow for streaming mode. */
-    private void setupStreamingModePipeline(InputSource inputSource)
-    {
+    private void setupStreamingModePipeline(InputSource inputSource) {
         this.inputSource = inputSource;
         // Initializes a new MediaPipe Hands solution instance in the streaming mode.
         hands = new Hands(this.getContext(), HandsOptions.builder().setStaticImageMode(false).setMaxNumHands(2).setRunOnGpu(RUN_ON_GPU).build());
@@ -216,12 +192,11 @@ public void checkPermission()
 
         /** Getting the translation */
         hands.setResultListener(
-                handsResult ->
-                {
-                    try
-                    {
+                handsResult -> {
+                    try {
                         int numHands = handsResult.multiHandLandmarks().size();
 
+                        //if hands is detected
                         if (numHands > 0) {
                             KeypointClassifier model = KeypointClassifier.newInstance(this.requireContext());
                             try{
@@ -233,10 +208,8 @@ public void checkPermission()
                                     ArrayList<Integer> semi_normalized_data = new ArrayList<>();
                                     ArrayList<Float> normalized_data = new ArrayList<>();
 
-                                    for (NormalizedLandmark l : handsResult.multiHandLandmarks().get(i).getLandmarkList())
-                                    {
-                                        if(count == 0)
-                                        {
+                                    for (NormalizedLandmark l : handsResult.multiHandLandmarks().get(i).getLandmarkList()) {
+                                        if(count == 0){
                                             base_x = (int) (l.getX() * 960);
                                             base_y = (int) (l.getY() * 540);
                                         }
@@ -248,17 +221,14 @@ public void checkPermission()
                                     }
 
                                     int maximum = Math.abs(semi_normalized_data.get(0));
-                                    for (int j = 1; j < semi_normalized_data.size(); j++)
-                                    {
+                                    for (int j = 1; j < semi_normalized_data.size(); j++){
                                         if (maximum < Math.abs(semi_normalized_data.get(j)))
                                             maximum = Math.abs(semi_normalized_data.get(j));
                                     }
-                                    for(Integer j: semi_normalized_data)
-                                    {
+                                    for(Integer j: semi_normalized_data){
                                         normalized_data.add((float) j / maximum);
                                         byteBuffer.putFloat((float) j / maximum);
                                     }
-//                                    Log.d("RAS_DEBUG", String.valueOf(normalized_data));
 
                                     // Creates inputs for reference.
                                     TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 42}, DataType.FLOAT32);
@@ -275,10 +245,8 @@ public void checkPermission()
 
                                     float accuracy = result[0];
                                     int accuracy_idx = 0;
-                                    for (int j = 1; j < result.length; j++)
-                                    {
-                                        if (accuracy < result[j])
-                                        {
+                                    for (int j = 1; j < result.length; j++){
+                                        if (accuracy < result[j]){
                                             accuracy = result[j];
                                             accuracy_idx = j;
                                         }
@@ -288,7 +256,6 @@ public void checkPermission()
                             } catch (BufferOverflowException e) {
                                 // TODO Handle BytOverflow
                             }
-
                             // Releases model resources if no longer used.
                             model.close();
                         }
@@ -296,15 +263,14 @@ public void checkPermission()
                         // TODO Handle the exception
                     }
 
-                    logWristLandmark(handsResult, /*showPixelValues=*/ false);
+                    logWristLandmark(handsResult, false);
                     glSurfaceView.setRenderData(handsResult);
                     glSurfaceView.requestRender();
                 });
 
         // The runnable to start camera after the gl surface view is attached.
         // For video input source, videoInput.start() will be called when the video uri is available.
-        if (inputSource == InputSource.CAMERA)
-        {
+        if (inputSource == InputSource.CAMERA){
             glSurfaceView.post(this::startCamera);
         }
 
@@ -343,6 +309,7 @@ public void checkPermission()
             }
         });
     }
+
     private void stopCurrentPipeline() {
         if (cameraInput != null) {
             cameraInput.setNewFrameListener(null);
@@ -356,17 +323,14 @@ public void checkPermission()
         }
     }
 
-    private void logWristLandmark(HandsResult result, boolean showPixelValues)
-    {
-        if (result.multiHandLandmarks().isEmpty())
-        {
+    private void logWristLandmark(HandsResult result, boolean showPixelValues) {
+        if (result.multiHandLandmarks().isEmpty()) {
             return;
         }
         NormalizedLandmark wristLandmark = result.multiHandLandmarks().get(0).getLandmarkList().get(HandLandmark.WRIST);
 
         // For Bitmaps, show the pixel values. For texture inputs, show the normalized coordinates.
-        if (showPixelValues)
-        {
+        if (showPixelValues) {
             int width = result.inputBitmap().getWidth();
             int height = result.inputBitmap().getHeight();
             Log.i(
