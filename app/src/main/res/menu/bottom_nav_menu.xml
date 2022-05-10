@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_transaction_history"
-        android:title="Kasaysayan" />
+        android:icon="@drawable/ic_question_mark"
+        android:title="Tungkol" />
 
 </menu>

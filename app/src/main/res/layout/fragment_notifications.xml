@@ -4,11 +4,237 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsFragment">
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:orientation="vertical"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:layout_marginBottom="44dp"
+    tools:context=".ui.notifications.NotificationsFragment"
+    android:theme="@style/Theme.Kamay">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_gravity="center"
+
+                android:background="@drawable/app_icon"
+                android:gravity="center_vertical"
+                android:padding="10dp">
+
+            </ImageView>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="KAMAY: A Filipino Sign Language Translator Application"
+                android:gravity="center"
+                android:theme="@style/Theme.Kamay" />
+
+            <TextView
+
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Tungkol sa Kamay"
+                android:textSize="22dp"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/Brown_Theme"
+                />
+
+            <TextView
+
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Ang Kamay ay isang android application na idinisenyo upang tulungan ang mga non-signers (mga taong hindi marunong gumamit ng Filipino Sign Language) na maunawaan ang kahulugan sa likod ng mga senyales ng Filipino Sign Language upang madali silang makipag-usap sa mga signers(mga taong alam gamitin ang Filipino Sign Language) tulad ng bingi at pipi."
+                android:textSize="16dp"
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Pagkilala"
+                android:textSize="22dp"
+
+                android:fontFamily="@font/roboto_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/Brown_Theme"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <ImageView
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/mmsu_logo"
+                    android:gravity="center_horizontal"
+
+                    >
+
+                </ImageView>
+
+                <ImageView
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/itsoc"
+                    android:gravity="center_horizontal">
+
+                </ImageView>
+
+
+            </LinearLayout>
+            <TextView
+                android:text="Mariano Marcos State University"
+                android:textSize="20dp"
+
+                android:fontFamily="@font/roboto_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+
+
+
+                android:text="Application Developer"
+                android:textSize="16dp"
+
+                android:textStyle="italic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+
+                android:textSize="18dp"
+
+                android:text="Queenee R. Vidad
+\nStephanie Ryu V. Idigpio\nJapheth Ephraim F. Pagdilao"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+
+                android:layout_marginTop="10dp"
+                android:text="Special Thanks"
+                android:textSize="20dp"
+
+                android:fontFamily="@font/roboto_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+
+
+
+                android:text="Panelist"
+                android:textSize="16dp"
+
+                android:textStyle="italic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+
+                android:textSize="18dp"
+
+                android:text="Mrs.Annjeanette Alain Galang
+\nMr.Gerry Contillo"
+
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+
+
+                android:text="Adviser"
+                android:textSize="16dp"
+
+                android:textStyle="italic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+
+                android:textSize="18dp"
+
+                android:text="Dr. Napoleon Cacanindin"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+
+            <TextView
+
+                android:layout_marginTop="30dp"
+
+                android:text="KAMAY"
+                android:gravity="center"
+                android:textSize="18dp"
+
+                android:fontFamily="@font/roboto_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+
+
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Copyright © 2022\nMariano Marcos State University\nAll Rights Reserved."
+                android:textSize="14dp"
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
 </LinearLayout>
