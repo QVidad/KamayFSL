@@ -55,8 +55,10 @@ public class HomeFragment extends Fragment
 
     private ArrayList<String> labels = new ArrayList<>(Arrays.asList("L", "Mahal Kita", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
                                                                     "K", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X",
-                                                                    "Y", "Z", "Salamat", "Hello", "Oo", "Hindi", "Ikaw", "Ako","Saan",
-                                                                    "Sign Language","Maganda","Magandang","Umaga","Tanghali","Gabi","Hapon"));
+                                                                    "Y", "Z", "Salamat", "Hello", "Oo", "Hindi", "Ikaw", "Akin","Saan",
+                                                                    "Sign Language","Maganda","Magandang","Umaga","Tanghali","Pamilya","Hapon","Tubig",
+                                                                    "Pasensya", "Okay Lang", "Dahil", "Welcome", "Magkano", "Ako", "Siya",
+                                                                    "Sila", "Tayo", "Atin", "Kailan", "Sige","Halik","Ngayon"));
     private ArrayList<String> sentence = new ArrayList<>();
     private String addSentence = "";
     private Hands hands;
