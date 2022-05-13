@@ -43,12 +43,14 @@
                 android:layout_height="60dp"
                 android:padding="10dp"
                 android:id="@+id/translated_text"
+                android:textColor="#FF0000"
                 android:textSize="30dp"></TextView>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:padding="20dp"
                 android:id="@+id/sentence"
+                android:textColor="#FF0000"
                 android:textSize="10dp"></TextView>
         </LinearLayout>
         <ImageButton
