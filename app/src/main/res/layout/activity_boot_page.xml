@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--Layout for the Boot Page-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context=".BootPageActivity">
-
+    <!--The "Hi!!" Text-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:layout_marginTop="50dp">
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,19 +19,19 @@
             android:fontFamily="@font/roboto_black">
         </TextView>
     </LinearLayout>
+    <!--The Hi Sign Animation-->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         android:layout_marginBottom="150sp">
-
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/anime_boot"/>
     </LinearLayout>
-
+    <!--The App Title-->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="430dp"
@@ -42,13 +41,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_bottom" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center|bottom">
-
         <TextView
             android:id="@+id/textView4"
             android:layout_width="fill_parent"
@@ -56,10 +53,7 @@
             android:layout_weight="0"
             android:gravity="center_horizontal"
             android:text="Filipino Sign\nLanguage\nTranslator"
-
             android:textSize="25sp"
             android:layout_marginBottom="50dp"/>
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
