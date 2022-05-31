@@ -7,12 +7,12 @@
         android:title="Isalin" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_type"
         android:icon="@drawable/ic_type"
         android:title="Mag-type" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_about"
         android:icon="@drawable/ic_question_mark"
         android:title="Tungkol" />
 

@@ -10,7 +10,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:layout_marginBottom="44dp"
-    tools:context=".ui.notifications.NotificationsFragment"
+    tools:context=".ui.about.AboutFragment"
     android:theme="@style/Theme.Kamay">
     <!--The Content of the Page-->
     <ScrollView

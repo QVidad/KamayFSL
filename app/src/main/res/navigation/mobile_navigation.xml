@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.kamay.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_type"
+        android:name="com.example.kamay.ui.type.TypeFragment"
         android:label="Mag-type"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_type" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.kamay.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_about"
+        android:name="com.example.kamay.ui.about.AboutFragment"
         android:label="Kasaysayan"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_about" />
 </navigation>
