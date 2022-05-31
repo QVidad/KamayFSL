@@ -4,6 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_background.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_boot.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_bottom.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_convo.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_question_mark.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_save.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_send.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_type.xml" value="0.178" />
+        <entry key="app/src/main/res/drawable/ic_videocamera.xml" value="0.178" />
         <entry key="app/src/main/res/layout/activity_boot_page.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.14130434782608695" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3098958333333333" />
